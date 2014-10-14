@@ -223,6 +223,12 @@
                         map: map
                     };
 
+                if (options.dataAttributes) {
+                    for (i = 0; i < options.dataAttributes.length; i++) {
+                        $toastElement.attr('data-' + options.dataAttributes[i].name, options.dataAttributes[i].value);
+                    }
+                }
+
                 if (map.iconClass) {
                     $toastElement.addClass(options.toastClass).addClass(iconClass);
                 }
