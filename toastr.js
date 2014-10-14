@@ -276,7 +276,7 @@
 
                 if (options.onclick) {
                     $toastElement.click(function () {
-                        options.onclick();
+                        options.onclick($toastElement);
                         hideToast();
                     });
                 }
