@@ -303,12 +303,13 @@
                         duration: options.hideDuration,
                         easing: options.hideEasing,
                         complete: function () {
-                            removeToast($toastElement);
+                            
                             if (options.onHidden && response.state !== 'hidden') {
-                                options.onHidden();
+                                options.onHidden($toastElement);
                             }
                             response.state = 'hidden';
                             response.endTime = new Date();
+                            removeToast($toastElement);
                             publish(response);
                         }
                     });
